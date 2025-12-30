@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Server, Key, Mail, Check, ExternalLink, Play } from "lucide-react";
+import {
+  Server,
+  Key,
+  Check,
+  ExternalLink,
+  Play,
+  Megaphone,
+} from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";
 
@@ -29,7 +36,7 @@ const HostYourBot = () => {
       );
 
       toast.success("Bot hosting request submitted", {
-        description: response.data?.message || "Submitted",
+        description: response.data?.message || "Submitted successfully",
       });
 
       setFormData({ token: "", email: "" });
@@ -51,12 +58,14 @@ const HostYourBot = () => {
 
   return (
     <section id="host-your-bot" className="relative py-24 overflow-hidden">
+      {/* background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]" />
       </div>
 
       <div className="container relative z-10 px-4">
         <div className="max-w-2xl mx-auto">
+          {/* header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm mb-6">
               <Server className="w-4 h-4 text-primary" />
@@ -70,8 +79,50 @@ const HostYourBot = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="glass-strong rounded-2xl p-8 space-y-6">
+          {/* ANNOUNCEMENT */}
+          <div className="glass-strong rounded-2xl p-5 mb-8 border border-primary/30">
+            <div className="flex items-center gap-2 mb-2">
+              <Megaphone className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold">NovaLabs Announcement</h3>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Hey NovaLabs users 👋  
+              We’re excited to announce that we’re coming with **new features**
+              for our bot. Be ready — updates are coming very soon 🚀
+            </p>
+          </div>
 
+          {/* VIDEO */}
+          <div className="glass-strong rounded-2xl p-6 mb-8 border border-primary/30">
+            <div className="flex items-center gap-2 mb-3">
+              <Play className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold text-base">
+                How to Host Your Bot
+              </h3>
+            </div>
+
+            <p className="text-sm text-muted-foreground mb-4">
+              Watch this short video to understand how to host your bot properly
+              before submitting your token.
+            </p>
+
+            <div className="relative w-full aspect-[9/16] max-w-[260px] mx-auto rounded-xl overflow-hidden border border-primary/40">
+              <iframe
+                src="https://www.youtube.com/embed/-ds8_JRmuuw"
+                title="How to host your bot"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
+          {/* FORM */}
+          <form
+            onSubmit={handleSubmit}
+            className="glass-strong rounded-2xl p-8 space-y-6"
+          >
+            {/* DISCORD WARNING */}
             <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/10 p-4 text-sm">
               <p className="font-medium text-yellow-400 mb-1">
                 ⚠️ Important
@@ -89,6 +140,7 @@ const HostYourBot = () => {
               </a>
             </div>
 
+            {/* TOKEN */}
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="flex items-center gap-2 text-sm font-medium">
@@ -102,7 +154,7 @@ const HostYourBot = () => {
                   className="inline-flex items-center gap-1.5 text-xs text-primary"
                 >
                   <Play className="w-3.5 h-3.5" />
-                  How to find your token
+                  How to find token
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
