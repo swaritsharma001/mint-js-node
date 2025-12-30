@@ -108,7 +108,7 @@ const HostYourBot = () => {
 
             <div className="relative w-full aspect-[9/16] max-w-[260px] mx-auto rounded-xl overflow-hidden border border-primary/40">
               <iframe
-                src="https://www.youtube.com/embed/-ds8_JRmuuw"
+                src="https://www.youtube.com/embed/MZT5LG4BmPs"
                 title="How to host your bot"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
