@@ -31,7 +31,7 @@ const HostYourBot = () => {
       setIsSubmitting(true);
 
       const response = await axios.post(
-        "https://api.mintgram.live/token",
+        "https://test--DhirajKumar67.replit.app/token",
         formData
       );
 
