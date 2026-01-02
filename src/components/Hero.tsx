@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Bot, Zap, Shield, ArrowDown } from "lucide-react";
-import cachingBotLogo from "@/assets/1000012795-removebg-preview.png";
+import cachingBotLogo from "@/assets/file_00000000a9e87206968bf5a204688d8d.png";
 
 const Hero = () => {
   const scrollToHosting = () => {
